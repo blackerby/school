@@ -20,13 +20,18 @@
           </li>
         </ul>
         <ul class="navbar-nav float-end">
-          <li class="nav-item">
             <?php if (is_user_authenticated()) : ?>
-            <a class="nav-link" href="/school/logout.php">Logout</a>
+              <li class="nav-item">
+                <a class="nav-link" href="/school/admin" id="admin">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/school/logout.php">Logout</a>
+              </li>
             <?php else : ?>
-            <a class="nav-link" href="/school/login.php">Login</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/school/login.php">Login</a>
+            </li>
             <?php endif; ?>
-          </li>
         </ul>
       </div>
     </div>

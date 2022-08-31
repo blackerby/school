@@ -7,3 +7,4 @@
 - [ ] add classroom/teacher/block junction table(s)?
 - [ ] rename tables for consistency
 - [x] fix add teacher view to draw from departments table
+- [ ] clean up view markup

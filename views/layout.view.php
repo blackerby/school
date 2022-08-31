@@ -21,6 +21,6 @@
 
     <!-- version without Popper see https://getbootstrap.com/docs/5.2/getting-started/introduction/ for more -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
-    <script src="scripts/main.js"></script>
+    <script src="/school/scripts/main.js"></script>
   </body>
 </html>

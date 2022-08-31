@@ -4,6 +4,7 @@ const index = document.getElementById("home");
 const teachersIndex = document.getElementById("teachers");
 const blocksIndex = document.getElementById("blocks");
 const deptIndex = document.getElementById("departments");
+const adminIndex = document.getElementById("admin");
 
 const url = new URL(document.URL);
 const pathname = url.pathname;
@@ -20,5 +21,8 @@ switch (pathname) {
     break;
   case "/school/departments.php":
     deptIndex.classList.add("active");
+    break;
+  case "/school/admin/":
+    adminIndex.classList.add("active");
     break;
 }
