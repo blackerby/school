@@ -1,0 +1,9 @@
+- [ ] add CRUD functionality for Departments
+  - [ ] C
+  - [ ] R
+  - [ ] U
+  - [ ] D
+- [ ] add classroom table
+- [ ] add classroom/teacher/block junction table(s)?
+- [ ] rename tables for consistency
+- [x] fix add teacher view to draw from departments table
