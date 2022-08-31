@@ -7,14 +7,12 @@ require('../app/app.php');
 ensure_user_is_authenticated();
 
 if (is_get()) {
-  $teacher = sanitize($_GET['teacher']);
+  $id = sanitize($_GET['teacher']);
 
-  if (empty($teacher)) {
+  if (empty($id)) {
     view('not-found');
     die();
   }
-
-  $id = $_GET['teacher'];
   
   $teacher = Data::get_teacher($id);
   $teacher_blocks = Data::get_teacher_blocks($id);

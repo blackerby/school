@@ -1,4 +1,5 @@
 <div class="container">
+  <a href="admin/edit-department.php?dept=<?= $model->id; ?>">Edit</a>
   <div class="row">
     <div class="col-lg-12">
       <div class="row">

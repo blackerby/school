@@ -93,4 +93,8 @@ class Data
   static public function add_department($name) {
     return self::$ds->add_department($name);
   }
+
+  static public function update_department($id, $name) {
+    return self::$ds->update_department($id, $name);
+  }
 }

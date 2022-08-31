@@ -1,7 +1,7 @@
 - [ ] add CRUD functionality for Departments
   - [x] C
   - [x] R
-  - [ ] U
+  - [x] U
   - [ ] D
 - [ ] add classroom table
 - [ ] add classroom/teacher/block junction table(s)?

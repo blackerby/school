@@ -126,6 +126,11 @@ class MySqlDataProvider extends DataProvider
     ]);
   }
   
+  public function update_department($id, $name) {
+    $sql = 'UPDATE departments SET name = :name WHERE id = :id;';
+    $this->execute($sql, [':name' => $name, ':id' => $id]);
+  }
+
   public function delete_teacher($id) {
     $this->execute('DELETE FROM teachers WHERE id = :id;', [':id' => $id]);
   }
