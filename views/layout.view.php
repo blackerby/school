@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="mt-4"><?= $view_bag['heading']; ?></h1>
+          <h1 class="mt-4 text-center"><?= $view_bag['heading']; ?></h1>
           <?php require("{$name}.view.php"); ?>
         </div>
       </div>

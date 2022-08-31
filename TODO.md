@@ -2,7 +2,7 @@
   - [x] C
   - [x] R
   - [x] U
-  - [ ] D
+  - [x] D
 - [ ] add classroom table
 - [ ] add classroom/teacher/block junction table(s)?
 - [ ] rename tables for consistency

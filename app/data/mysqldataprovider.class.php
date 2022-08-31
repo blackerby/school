@@ -131,6 +131,10 @@ class MySqlDataProvider extends DataProvider
     $this->execute($sql, [':name' => $name, ':id' => $id]);
   }
 
+  public function delete_department($id) {
+    $this->execute('DELETE FROM departments WHERE id = :id;', [':id' => $id]);
+  }
+  
   public function delete_teacher($id) {
     $this->execute('DELETE FROM teachers WHERE id = :id;', [':id' => $id]);
   }

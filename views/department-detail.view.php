@@ -1,5 +1,10 @@
 <div class="container">
-  <a href="admin/edit-department.php?dept=<?= $model->id; ?>">Edit</a>
+<?php if (is_user_authenticated()) : ?>
+  <div class="container text-center">
+    <a href="admin/edit-department.php?dept=<?= $model->id; ?>">Edit</a>
+    <a href="admin/delete-department.php?dept=<?= $model->id; ?>">Delete</a>
+  </div>
+  <?php endif; ?>
   <div class="row">
     <div class="col-lg-12">
       <div class="row">

@@ -97,4 +97,8 @@ class Data
   static public function update_department($id, $name) {
     return self::$ds->update_department($id, $name);
   }
+
+  static public function delete_department($id) {
+    return self::$ds->delete_department($id);
+  }
 }
