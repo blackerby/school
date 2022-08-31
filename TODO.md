@@ -9,3 +9,4 @@
 - [x] fix add teacher view to draw from departments table
 - [ ] clean up view markup
 - [ ] add User model, set up, log in
+- [ ] create building table (building has many classrooms)
