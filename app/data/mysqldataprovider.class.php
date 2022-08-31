@@ -197,14 +197,14 @@ class MySqlDataProvider extends DataProvider
 
   public function get_departments() {
     return $this->query(
-      'SELECT * FROM department ORDER BY LEFT(name, 1);',
+      'SELECT * FROM departments ORDER BY LEFT(name, 1);',
       [],
       'Department'
     );
   }
 
   public function get_department($id) {
-    $sql = 'SELECT * FROM department WHERE id = :id;';
+    $sql = 'SELECT * FROM departments WHERE id = :id;';
     return $this->get($sql, [':id' => $id], 'Department');
   }
   
@@ -217,7 +217,7 @@ class MySqlDataProvider extends DataProvider
 
   public function add_department($name) {
     $this->execute(
-      'INSERT INTO department (name) VALUES (:name);',
+      'INSERT INTO departments (name) VALUES (:name);',
       [':name' => $name]
     );
   }

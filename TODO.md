@@ -1,6 +1,6 @@
 - [ ] add CRUD functionality for Departments
-  - [ ] C
-  - [ ] R
+  - [x] C
+  - [x] R
   - [ ] U
   - [ ] D
 - [ ] add classroom table
