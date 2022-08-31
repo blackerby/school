@@ -1,4 +1,4 @@
-- [ ] add CRUD functionality for Departments
+- [x] add CRUD functionality for Departments
   - [x] C
   - [x] R
   - [x] U
@@ -8,3 +8,4 @@
 - [ ] rename tables for consistency
 - [x] fix add teacher view to draw from departments table
 - [ ] clean up view markup
+- [ ] add User model, set up, log in
