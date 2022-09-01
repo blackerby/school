@@ -22,12 +22,12 @@ class Data
     return self::$ds->search_teachers($search);
   }
 
-  static public function add_teacher($firstname, $lastname, $department) {
-    return self::$ds->add_teacher($firstname, $lastname, $department);
+  static public function add_teacher($firstname, $lastname, $department, $email) {
+    return self::$ds->add_teacher($firstname, $lastname, $department, $email);
   }
 
-  static public function update_teacher($teacher_id, $firstname, $lastname, $department) {
-    return self::$ds->update_teacher($teacher_id, $firstname, $lastname, $department);
+  static public function update_teacher($teacher_id, $firstname, $lastname, $department, $email) {
+    return self::$ds->update_teacher($teacher_id, $firstname, $lastname, $department, $email);
   }
 
   static public function delete_teacher($id) {

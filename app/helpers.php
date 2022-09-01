@@ -27,6 +27,15 @@ function sanitize($value) {
   return $temp;
 }
 
+function sanitize_email($value) {
+  $temp = filter_var(trim($value), FILTER_SANITIZE_EMAIL);
+
+  if ($temp === false) {
+    return '';
+  }
+  return $temp;
+}
+
 function authenticate_user($email, $password) {
   $users = CONFIG['users'];
 

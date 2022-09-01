@@ -43,21 +43,22 @@ class DataProvider
     );
   }
   
-  public function add_teacher($firstname, $lastname, $department) {
+  public function add_teacher($firstname, $lastname, $department, $email) {
     $this->execute(
-      'INSERT INTO teachers (first_name, last_name, department_id) VALUES (:first_name, :last_name, :department_id);',
+      'INSERT INTO teachers (first_name, last_name, department_id, email) VALUES (:first_name, :last_name, :department_id, :email);',
       [
         ':first_name' => $firstname,
         ':last_name' => $lastname,
-        ':department_id' => $department
+        ':department_id' => $department,
+        ':email' => $email
       ]
     );
   }
   
-  public function update_teacher($teacher_id, $firstname, $lastname, $department) {
+  public function update_teacher($teacher_id, $firstname, $lastname, $department, $email) {
     $sql = <<<EOS
     UPDATE teachers 
-    SET first_name = :first_name, last_name = :last_name, department_id = :department_id
+    SET first_name = :first_name, last_name = :last_name, department_id = :department_id, email = :email
     WHERE id = :teacher_id;
     EOS;
 
@@ -65,7 +66,8 @@ class DataProvider
       ':first_name' => $firstname,
       ':last_name' => $lastname,
       ':department_id' => (int) $department,
-      ':teacher_id' => (int) $teacher_id
+      ':teacher_id' => (int) $teacher_id,
+      ':email' => $email
     ]);
   }
   

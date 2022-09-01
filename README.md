@@ -1,12 +1,14 @@
-- [x] add CRUD functionality for Departments
-  - [x] C
-  - [x] R
-  - [x] U
-  - [x] D
-- [ ] add classroom table
+- [ ] add classroom table (building_id)
 - [ ] add classroom/teacher/block junction table(s)?
 - [ ] rename tables for consistency
 - [x] fix add teacher view to draw from departments table
 - [ ] clean up view markup
 - [ ] add User model, set up, log in
 - [ ] create building table (building has many classrooms)
+  - Town Hall (14, 15, 16, 17, Contemp, Theater, Concert, Swan, Rehearsal)
+  - A (1, 2, 3, 4, 4S)
+  - B (5, 6, 7, 8, 8S)
+  - C (9, 10, 11, 12, 12S)
+  - Science Center
+  - Gym (Foyer, Weight, Main, Practice)
+  - Art Building (Pottery, MakerSpace, Photo, Studio)

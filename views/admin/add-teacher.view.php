@@ -9,6 +9,10 @@
       <label for="teacherLastName" class="form-label">Teacher's Last Name</label>
       <input type="text" class="form-control" name="lastname" id="lastname">
     </div>
+    <div class="mb-3">
+      <label for="teacherEmail" class="form-label">Teacher's Email</label>
+      <input type="email" class="form-control" name="email" id="email">
+    </div>
     <h3>Department</h3>
     <div class="mb-3">
       <select class="form-select" name="department">

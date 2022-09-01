@@ -12,6 +12,7 @@ if (is_post()) {
   $firstname = sanitize($_POST['firstname']);
   $lastname = sanitize($_POST['lastname']);
   $department = sanitize($_POST['department']);
+  $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
   $schedule = array_map(function($block) {
     return sanitize($block);
   }, $_POST['schedule']);
@@ -19,7 +20,7 @@ if (is_post()) {
   if (empty($firstname) || empty($lastname) || empty($department)) {
     // TODO: display message
   } else {
-    Data::add_teacher($firstname, $lastname, $department);
+    Data::add_teacher($firstname, $lastname, $department, $email);
   }
 
   if (!empty($schedule)) {

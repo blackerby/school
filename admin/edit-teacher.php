@@ -39,11 +39,12 @@ if (is_post()) {
   $lastname = sanitize($_POST['lastname']);
   $department = sanitize($_POST['department']);
   $teacher_id= sanitize($_POST['id']);
+  $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : '';
 
   if (empty($firstname) || empty($lastname) || empty($department) || empty($teacher_id)) {
     // TODO: display message
   } else {
-    Data::update_teacher($teacher_id, $firstname, $lastname, $department);
+    Data::update_teacher($teacher_id, $firstname, $lastname, $department, $email);
   }
 
   $schedule = array_map(function($block) {
