@@ -70,10 +70,6 @@ class Data
     return self::$ds->get_teacher_by_name_and_department($first_name, $last_name, $department_id);
   }
 
-  // static public function update_teacher_block($teacher_id, $block_id) {
-  //   return self::$ds->update_teacher_block($teacher_id, $block_id);
-  // }
-
   static public function delete_teacher_blocks($teacher_id) {
     return self::$ds->delete_teacher_blocks($teacher_id);
   }
