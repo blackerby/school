@@ -1,6 +1,6 @@
 <?php
 
-function view($name, $model = '', $data = '', $free = '') {
+function view($name, $model = '', $data = '', $free = '', $or = '', $fr = '') {
   global $view_bag;
   require(APP_PATH . "views/layout.view.php");
 }

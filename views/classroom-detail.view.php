@@ -22,7 +22,7 @@
       </table>
     </div>
   <div class="col">
-    <h3>Free During</h3>
+    <h3>Open During</h3>
     <table class="table table-striped">
       <?php foreach($free as $block) : ?>
         <tr>

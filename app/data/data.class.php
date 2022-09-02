@@ -124,4 +124,13 @@ class Data
   static public function search_classrooms($search) {
     return self::$ds->search_classrooms($search);
   }
+
+  static public function get_block_classrooms($classroom_id) {
+    return self::$ds->get_block_classrooms($classroom_id);
+  }
+
+
+  static public function get_block_free_classrooms($block_id) {
+    return self::$ds->get_block_free_classrooms($block_id);
+  }
 }

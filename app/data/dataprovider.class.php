@@ -297,4 +297,25 @@ class DataProvider
       'Classroom'
     );
   }
+
+  public function get_block_classrooms($block_id) {
+    $sql = 'SELECT * FROM classrooms_blocks WHERE block_id = :block_id;';
+    return $this->query($sql, [':block_id' => $block_id], 'ClassroomBlock'); 
+  }
+
+  public function get_block_free_classrooms($block_id) {
+    $sql = <<<EOS
+    SELECT * FROM classrooms
+    WHERE classrooms.id NOT IN (
+      SELECT classrooms.id FROM classrooms
+      LEFT JOIN classrooms_blocks
+      ON classrooms.id = classrooms_blocks.classroom_id
+      LEFT JOIN blocks
+      ON blocks.id = classrooms_blocks.block_id
+      WHERE blocks.id = :block_id
+    );
+    EOS;
+    
+    return $this->query($sql, [':block_id' => $block_id], 'Classroom'); 
+  }
 }

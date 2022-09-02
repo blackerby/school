@@ -28,5 +28,33 @@
       <?php endforeach; ?>
     </table>
     </div>
+    <div class="col">
+    <h3>Occupied</h3>
+    <table class="table table-striped">
+    <?php foreach($or as $room) : ?>
+      <tr>
+        <td>
+          <a href="classroom-detail.php?room=<?= $room->id; ?>">
+            <?= $room->name ?>
+          </a>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </table>
+    </div>
+    <div class="col">
+    <h3>Open</h3>
+    <table class="table table-striped">
+    <?php foreach($fr as $room) : ?>
+      <tr>
+        <td>
+          <a href="classroom-detail.php?room=<?= $room->id; ?>">
+            <?= $room->name ?>
+          </a>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </table>
+    </div>
   </div>
 </div>
