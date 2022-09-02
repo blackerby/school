@@ -1,7 +1,6 @@
-- [ ] add classroom table (building_id)
-- [ ] add classroom/teacher/block junction table(s)?
+- [ ] add Edit Classroom functionality
 - [ ] rename tables for consistency
-- [x] fix add teacher view to draw from departments table
+- [ ] add classroom/teacher/block junction table(s)?
 - [ ] clean up view markup
 - [ ] add User model, set up, log in
 - [ ] create building table (building has many classrooms)

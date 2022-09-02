@@ -1,6 +1,6 @@
 <?php if (is_user_authenticated()) : ?>
   <div class="container text-center">
-    <a href="admin/edit-classroom.php?room=<?= '#' ?>">Edit</a>
+    <a href="admin/edit-classroom.php?room=<?= $model->id ?>">Edit</a>
     <a href="admin/delete-classroom.php?room=<?= $model->id ?>">Delete</a>
   </div>
   <?php endif; ?>
