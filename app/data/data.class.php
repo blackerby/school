@@ -140,4 +140,12 @@ class Data
   static public function get_classroom_by_name($name) {
     return self::$ds->get_classroom_by_name($name);
   }
+
+  static public function update_classroom($id, $name) {
+    return self::$ds->update_classroom($id, $name);
+  }
+
+  static public function delete_classroom_blocks($classroom_id) {
+    return self::$ds->delete_classroom_blocks($classroom_id);
+  }
 }

@@ -329,4 +329,15 @@ class DataProvider
     $sql = 'SELECT * FROM classrooms WHERE name = :name;';
     return $this->get($sql, [':name' => $name], 'Classroom');
   }
+
+  public function update_classroom($id, $name) {
+    $sql = 'UPDATE classrooms SET name = :name WHERE id = :id;';
+    $this->execute($sql, [':name' => $name, ':id' => $id]);
+  }
+
+  public function delete_classroom_blocks($classroom_id) {
+    $this->execute('DELETE FROM classrooms_blocks WHERE classroom_id = :classroom_id;',
+      [':classroom_id' => $classroom_id]
+    );
+  }
 }
