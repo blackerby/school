@@ -18,6 +18,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/school/departments.php" id="departments">Departments</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/school/classrooms.php" id="classrooms">Classrooms</a>
+          </li>
         </ul>
         <ul class="navbar-nav float-end">
             <?php if (is_user_authenticated()) : ?>

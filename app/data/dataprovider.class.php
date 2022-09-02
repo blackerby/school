@@ -4,6 +4,8 @@ require('teacher.class.php');
 require('block.class.php');
 require('teacherblock.class.php');
 require('department.class.php');
+require('classroom.class.php');
+require('classroomblock.class.php');
 
 class DataProvider
 {
@@ -198,12 +200,16 @@ class DataProvider
       $query->execute($sql_params);
     }
 
-    $data = $query->fetchAll(PDO::FETCH_CLASS, $class);
+    if ($query === false) {
+      return [];
+    } else {
+      $data = $query->fetchAll(PDO::FETCH_CLASS, $class);
 
-    $query = null;
-    $db = null;
-
-    return $data;
+      $query = null;
+      $db = null;
+      
+      return $data;
+    }
   }
 
   private function get($sql, $sql_params, $class) {
@@ -242,4 +248,53 @@ class DataProvider
     $db = null;
   }
   
+  public function get_classrooms() {
+    return $this->query(
+      'SELECT * FROM classrooms ORDER BY LEFT(name, 1);',
+      [],
+      'Classroom'
+    );
+  }
+  public function add_classroom($name) {
+    $this->execute(
+      'INSERT INTO classrooms (name) VALUES (:name);',
+      [':name' => $name]
+    );
+  }
+  public function get_classroom($id) {
+    $sql = 'SELECT * FROM classrooms WHERE id = :id;';
+    return $this->get($sql, [':id' => $id], 'Classroom');
+  }
+
+  public function delete_classroom($id) {
+    $this->execute('DELETE FROM classrooms WHERE id = :id;', [':id' => $id]);
+  }
+
+  public function get_classroom_blocks($classroom_id) {
+    $sql = 'SELECT * FROM classrooms_blocks WHERE classroom_id = :classroom_id;';
+    return $this->query($sql, [':classroom_id' => $classroom_id], 'ClassroomBlock'); 
+  }
+
+  public function get_classroom_free_blocks($classroom_id) {
+    $sql = <<<EOS
+    SELECT * FROM blocks
+    WHERE blocks.id NOT IN (
+      SELECT blocks.id FROM blocks
+      LEFT JOIN classrooms_blocks
+      ON blocks.id = classrooms_blocks.block_id
+      LEFT JOIN classrooms
+      ON classrooms.id = classrooms_blocks.classroom_id
+      WHERE classrooms_blocks.classroom_id = :classroom_id
+    );
+    EOS;
+    return $this->query($sql, [':classroom_id' => $classroom_id], 'Block'); 
+  }
+
+  public function search_classrooms($search) {
+    return $this->query(
+      'SELECT * FROM classrooms WHERE name LIKE :search;',
+      [':search' => '%' . $search . '%'],
+      'Classroom'
+    );
+  }
 }

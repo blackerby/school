@@ -1,4 +1,3 @@
-
 <table class="table table-striped">
   <?php foreach ($model as $department) : ?>
     <tr>

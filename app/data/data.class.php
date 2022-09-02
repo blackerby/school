@@ -97,4 +97,31 @@ class Data
   static public function delete_department($id) {
     return self::$ds->delete_department($id);
   }
+
+  static public function get_classrooms() {
+    return self::$ds->get_classrooms();
+  }
+  static public function add_classroom($name) {
+    return self::$ds->add_classroom($name);
+  }
+
+  static public function get_classroom($id) {
+    return self::$ds->get_classroom($id);
+  }
+
+  static public function delete_classroom($id) {
+    return self::$ds->delete_classroom($id);
+  }
+
+  static public function get_classroom_blocks($classroom_id) {
+    return self::$ds->get_classroom_blocks($classroom_id);
+  }
+  
+  static public function get_classroom_free_blocks($classroom_id) {
+    return self::$ds->get_classroom_free_blocks($classroom_id);
+  }
+
+  static public function search_classrooms($search) {
+    return self::$ds->search_classrooms($search);
+  }
 }
