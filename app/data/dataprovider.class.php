@@ -261,6 +261,7 @@ class DataProvider
       [':name' => $name]
     );
   }
+
   public function get_classroom($id) {
     $sql = 'SELECT * FROM classrooms WHERE id = :id;';
     return $this->get($sql, [':id' => $id], 'Classroom');
@@ -317,5 +318,15 @@ class DataProvider
     EOS;
     
     return $this->query($sql, [':block_id' => $block_id], 'Classroom'); 
+  }
+
+  public function add_classroom_block($classroom_id, $block_id) {
+    $sql = 'INSERT INTO classrooms_blocks (classroom_id, block_id) VALUES (:classroom_id, :block_id);';
+    $this->execute($sql, [':classroom_id' => $classroom_id, ':block_id' => $block_id]);
+  }
+
+  public function get_classroom_by_name($name) {
+    $sql = 'SELECT * FROM classrooms WHERE name = :name;';
+    return $this->get($sql, [':name' => $name], 'Classroom');
   }
 }

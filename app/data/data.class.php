@@ -129,8 +129,15 @@ class Data
     return self::$ds->get_block_classrooms($classroom_id);
   }
 
-
   static public function get_block_free_classrooms($block_id) {
     return self::$ds->get_block_free_classrooms($block_id);
+  }
+
+  static public function add_classroom_block($classroom_id, $block_id) {
+    return self::$ds->add_classroom_block($classroom_id, $block_id);
+  }
+
+  static public function get_classroom_by_name($name) {
+    return self::$ds->get_classroom_by_name($name);
   }
 }
